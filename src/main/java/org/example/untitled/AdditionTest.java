@@ -23,6 +23,8 @@ public class AdditionTest {
   public void setUp() {
     System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
     ChromeOptions options = new ChromeOptions();
+    options.addArguments("--headless");
+    options.addArguments("--no-sandbox");
     options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
     driver = new ChromeDriver(options);
     js = (JavascriptExecutor) driver;
