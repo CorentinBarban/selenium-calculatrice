@@ -20,7 +20,7 @@ public class AdditionTest {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-    System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
