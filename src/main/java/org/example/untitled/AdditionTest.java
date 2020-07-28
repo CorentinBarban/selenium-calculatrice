@@ -8,6 +8,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +22,9 @@ public class AdditionTest {
   @Before
   public void setUp() {
     System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
-    driver = new ChromeDriver();
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+    driver = new ChromeDriver(options);
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
